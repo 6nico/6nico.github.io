@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crash Log Analyzer · Nicolas Olmos</title>
+<meta name="description" content="A Windows app that turns confusing crash logs into a plain-English explanation and one clear next step.">
+<link rel="icon" href="img/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .container{max-width:960px}
+  .head{display:flex;gap:20px;align-items:center;margin-bottom:28px}
+  .head img{width:64px;height:64px;border-radius:16px;flex:0 0 64px}
+  .head h1{margin:0}
+  .head .sub{margin:4px 0 0}
+  .lede{font-size:19px;line-height:1.65;max-width:40em}
+  .step{margin-top:88px}
+  .step h2{margin:0 0 10px}
+  .step h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px;color:var(--text)}
+  .step > p{max-width:40em}
+  figure{margin:28px 0 0}
+  figure img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 48px rgba(0,0,0,.28)}
+  figcaption{font-size:14px;color:var(--faint);margin-top:12px}
+  .points{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px;margin-top:20px}
+  .points.two{grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr))}
+  nav{flex-wrap:wrap;gap:12px}
+  .points li{border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .points b{display:block;color:var(--text);font-weight:500;margin-bottom:4px}
+  .points span{color:var(--muted);font-size:15px;line-height:1.6}
+  .note{margin-top:88px;padding-top:24px;border-top:1px solid var(--line);font-size:15px}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav><a class="mark" href="../" style="text-decoration:none">← nico</a><div class="navlinks"><button id="theme" class="toggle" aria-label="Switch light or dark mode" title="Light / dark"><svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button><a href="mailto:nolmos28@outlook.com">Email</a><a href="https://www.linkedin.com/in/nicolasolmosba/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/6nico" target="_blank" rel="noopener">GitHub</a></div></nav>
+
+  <header>
+    <div class="head">
+      <img src="img/app-icon.png" alt="" width="64" height="64">
+      <div>
+        <h1>Crash Log Analyzer</h1>
+        <p class="sub">Windows app · Nov 2026 – present</p>
+      </div>
+    </div>
+    <p class="lede">When a program or your whole PC crashes, Windows writes down what happened, but in codes almost nobody can read. Crash Log Analyzer finds those records, explains them in plain English, and tells you one thing to try first.</p>
+    <div class="tags"><span>PowerShell</span><span>Windows Forms</span><span>Gemini API</span></div>
+  </header>
+
+  <section class="step">
+    <h2>Step 1</h2>
+    <h3>Pick a crash</h3>
+    <p>The app lists every crash from the last 7 days, both programs that stopped working and times the whole PC shut down unexpectedly. Repeat records from the same incident are grouped, so each crash shows up once.</p>
+    <figure>
+      <img src="img/recent-crashes.png" alt="Crash Log Analyzer's Recent crashes screen: a list of six crashes from the last seven days, with Hitscan Utility selected and an Analyze this crash button." width="1484" height="1092" loading="lazy">
+      <figcaption>Recent crashes: six records found, two of them whole-PC shutdowns.</figcaption>
+    </figure>
+  </section>
+
+  <section class="step">
+    <h2>Step 2</h2>
+    <h3>Get a clear answer</h3>
+    <p>One click turns the record into a short report: what happened, the most likely causes ranked by the evidence, and one specific thing to try, with what the result would tell you. Facts Windows recorded stay separate from the AI's guesses.</p>
+    <figure>
+      <img src="img/analysis-report.png" alt="Crash Log Analyzer's report for a Hitscan Utility crash: a What happened explanation, ranked possible causes with evidence, and a Try this first suggestion." width="1484" height="1092" loading="lazy">
+      <figcaption>The report for a memory access crash, with a next step the user can actually try.</figcaption>
+    </figure>
+  </section>
+
+  <section class="step">
+    <h2>How it works</h2>
+    <ul class="points two">
+      <li><b>Reads Windows' own records</b><span>App crashes, frozen programs, blue screens and sudden shutdowns from the system event logs.</span></li>
+      <li><b>Keeps your details private</b><span>Your user name, profile folder and PC name are swapped for placeholders before anything is sent.</span></li>
+      <li><b>Structured AI answers</b><span>Gemini must reply in a fixed format that matches the report, so every result has the same clear sections.</span></li>
+      <li><b>Changes nothing</b><span>It only reads records. Nothing on the PC is modified.</span></li>
+    </ul>
+  </section>
+
+  <section class="step">
+    <h2>What I did</h2>
+    <ul class="points">
+      <li><b>Product</b><span>Turned the difficulty of reading Windows crash logs into a guided flow, from picking an incident to a clear next step.</span></li>
+      <li><b>Requirements</b><span>Defined the user flow, report sections, and evidence rules that keep possible causes distinct from recorded facts.</span></li>
+      <li><b>Prototype</b><span>Built it with Gemini-generated explanations, structured outputs, and personal-identifier redaction.</span></li>
+    </ul>
+  </section>
+
+  <p class="note">A personal project, not available for download. Screenshots are from the working app on my own PC.</p>
+
+  <footer>Built by Nico · <a href="../">Back to portfolio</a></footer>
+</div>
+<script>
+(function(){var r=document.documentElement,k='nico-theme';try{var t=localStorage.getItem(k);if(t)r.dataset.theme=t}catch(e){}
+document.getElementById('theme').onclick=function(){var n=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=n;try{localStorage.setItem(k,n)}catch(e){}}})();
+</script>
+</body>
+</html>
