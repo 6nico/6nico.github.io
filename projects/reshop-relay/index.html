@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reshop Relay · Nico Olmos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔵</text></svg>">
+</head>
+<body data-page="works" id="top">
+
+<header class="wrap proj-hero">
+  <a class="back reveal" href="/works/">← Works</a>
+  <h1 class="reveal d1">Reshop Relay</h1>
+  <p class="lede reveal d2">Python optimizer that plans the shortest route to return items to the shelf and estimates walking distance, time, and labor saved.</p>
+  <div class="tags reveal d2"><span>Python</span><span>Route optimization</span><span>Supply chain ops</span></div>
+  <div class="actions reveal d3"><a class="btn" href="https://6nico.github.io/reshop-relay/" target="_blank" rel="noopener">Open live demo ↗</a><a class="btn ghost" href="/works/">All projects</a></div>
+</header>
+<section class="wrap">
+  <div class="proj-shot reveal"><div class="frame"><div class="bbar"><i></i><i></i><i></i><span>6nico.github.io/reshop-relay</span></div><img src="/assets/reshop.png" alt="Reshop Relay screenshot"></div></div>
+  <div class="facts">
+    <div class="card reveal"><span class="label">Year</span><b>2026</b></div>
+    <div class="card reveal d1"><span class="label">Role</span><b>Solo builder</b></div>
+    <div class="card reveal d2"><span class="label">Type</span><b>Simulation & optimizer</b></div>
+  </div>
+</section>
+<article class="wrap prose">
+  <h2 class="reveal">The problem</h2>
+  <p class="reveal">Reshop (items customers leave behind) piles up at Guest Services all day, and returning it usually means a dedicated walk across the store. That's paid time spent walking instead of helping guests.</p>
+  <h2 class="reveal">What I built</h2>
+  <ul class="reveal"><li>A store model with zones, shelves and team-member trips</li><li>A route optimizer (Dijkstra + 2-opt) that finds the shortest path to put items back</li><li>Estimates of walking distance, time and labor hours saved</li><li>A side-by-side comparison of dedicated trips vs. grabbing reshop during trips people already make</li><li>17 passing tests, and it runs in the browser with Pyodide</li></ul>
+  <h2 class="reveal">What I learned</h2>
+  <p class="reveal">The best labor saving isn't always the best plan: one approach saved the most time but left more items off the shelf at close, so the tool shows both numbers.</p>
+  <a class="next reveal" href="/projects/supply-chain-planner/"><small>NEXT PROJECT</small><big>Supply Chain Planner →</big></a>
+</article>
+
+<div id="footer"></div>
+<script src="/assets/main.js"></script>
+</body>
+</html>

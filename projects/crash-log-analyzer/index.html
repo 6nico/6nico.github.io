@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crash Log Analyzer · Nico Olmos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔵</text></svg>">
+</head>
+<body data-page="works" id="top">
+
+<header class="wrap proj-hero">
+  <a class="back reveal" href="/works/">← Works</a>
+  <h1 class="reveal d1">Crash Log Analyzer</h1>
+  <p class="lede reveal d2">Windows app that explains crash logs, splits facts from possible causes, and suggests one next step. Uses the Gemini API with structured outputs and removes personal info before sending.</p>
+  <div class="tags reveal d2"><span>AI</span><span>PowerShell</span><span>Windows Forms</span><span>Gemini API</span></div>
+  <div class="actions reveal d3"><a class="btn" href="https://6nico.github.io/crash-log-analyzer/" target="_blank" rel="noopener">See the screens ↗</a><a class="btn ghost" href="/works/">All projects</a></div>
+</header>
+<section class="wrap">
+  <div class="proj-shot app reveal"><div class="frame" style="background:transparent"><img src="/assets/crash.png" alt="Crash Log Analyzer app window"></div></div>
+  <div class="facts">
+    <div class="card reveal"><span class="label">Year</span><b>2026 – present</b></div>
+    <div class="card reveal d1"><span class="label">Role</span><b>Solo builder</b></div>
+    <div class="card reveal d2"><span class="label">Type</span><b>Windows desktop app</b></div>
+  </div>
+</section>
+<article class="wrap prose">
+  <h2 class="reveal">The problem</h2>
+  <p class="reveal">When a program or the whole PC crashes, Windows writes down what happened, but in codes almost nobody can read.</p>
+  <h2 class="reveal">What I built</h2>
+  <ul class="reveal"><li>Lists every crash from the last 7 days and groups repeats from the same incident</li><li>Removes personal info from the log before anything leaves the PC</li><li>Uses the Gemini API (or Claude / OpenAI) with structured outputs to separate facts from possible causes</li><li>Ends with one clear next step to try first</li></ul>
+  <h2 class="reveal">What I learned</h2>
+  <p class="reveal">Structured outputs make AI answers predictable enough to put in a real UI: every result has the same shape, so the app can trust it.</p>
+  <a class="next reveal" href="/projects/serlen/"><small>NEXT PROJECT</small><big>Serlen →</big></a>
+</article>
+
+<div id="footer"></div>
+<script src="/assets/main.js"></script>
+</body>
+</html>
